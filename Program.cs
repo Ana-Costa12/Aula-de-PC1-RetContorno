@@ -55,25 +55,30 @@ namespace Aula_de_PC1_RetContorno
                    Console.Clear();
                    Environment.Exit(-1);
                 }
-                 while ( valor1 <= Altura || valor2 <= Largura)
-            {
-                if (valor2 == 1 || valor2 == Largura || valor1 == 1 || valor1 == Altura)
-                {
-                    Console.Write("+ ");
-                }
-                 else
-                    {
-                        Console.Write("  ");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                 while ( valor1 <= Altura)
+                 {
+                     while ( valor2 <= Largura)
+                     {
+                        if (valor2 == 1 || valor2 == Largura || valor1 == 1 || valor1 == Altura)
+                        {
+                           Console.Write("+ ");
+                        }
+                        else
+                        {
+                           Console.Write("  ");
+                        }
+                        valor2++;
                     }
-                valor2++;
+                
+                   valor2 = 1;
+                   Console.WriteLine();
+                   valor1++;
                 }
-                valor2 = 1;
-                Console.WriteLine();
-                valor1++;
-
+                Console.ResetColor();
             }
-            }
-        }
+        
+        } 
         static void Main(string[] args)
         {
             Console.WriteLine("Vamos desenhar um retângulo!");
@@ -82,9 +87,7 @@ namespace Aula_de_PC1_RetContorno
             Console.WriteLine("Por favor digite o valor da largura:");
             Console.WriteLine("####################################");
             Console.ResetColor();
-            Program.Validade();        
-            
-           
+            Program.Validade();         
         }
     }
 }
